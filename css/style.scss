@@ -1,0 +1,246 @@
+@import "mixin";
+
+body {
+    margin: 0;
+    background-color: #000000;
+}
+
+ul,li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.top-container {
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+
+    & img {
+        width: calc(100%/3);
+        height: 100vh;
+        flex-shrink: 0;
+        object-fit: cover;
+    }
+}
+
+.middle-container {
+    color: #fff;
+    background-color: #000000;
+    text-align: center;
+    position: relative;
+    top: 300px;
+    z-index: 10;
+
+    & .main-text {
+        font-size: 80px;
+        letter-spacing: 3px;
+    }
+
+    & .sub-text {
+        margin: 80px 0;
+
+        & .info-logo {
+            @include logo;
+        }
+
+        & p {
+            font-size: 16px;
+            margin: 0;
+
+            &.tall {
+                font-size: 20px;
+                letter-spacing: 1px;
+            }
+        }
+
+        & h2 {
+            font-size: 30px;
+        }
+    }
+
+    & .gallery-box {
+        margin: 170px 0;
+
+        & .gallery-logo {
+            display: inline-block;
+            border-bottom: 1px solid #fff;
+            font-size: 50px;
+            letter-spacing: 3px;
+            margin-bottom: 50px;
+        }
+
+        & .photo {
+            margin: 80px 0;
+            width: 60%;
+            margin: 0 auto; 
+
+            & img {
+                display: block;
+                width: 48%;
+                margin: 30px 0;
+
+                &.left {
+                    margin-right: auto;
+                }
+
+                &.right {
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+}
+
+.buttom-container {
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+    width: 60%;
+
+    & .access-logo {
+        @include logo;
+    }
+
+    & .access-text {
+        margin-bottom: 50px;
+
+        & p {
+            font-size: 14px;
+            margin: 0;
+
+            &.space {
+                margin-top: 30px;
+            }
+        }
+
+        & h2 {
+            font-size: 20px;
+        }
+    }
+
+    & .access-btn {
+        border: 1px solid #fff;
+        color: #fff;
+        padding: 15px 50px;
+        display: inline-block;
+        font-size: 14px;
+        transition: 0.3s all;
+    }
+
+    & .access-btn:hover {
+        background-color: #000000;
+        cursor: pointer;
+    }
+
+    & .contact-box {
+        margin-top: 300px;
+
+        & .contact-logo {
+            @include logo;
+        }
+
+        & .inquiry-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & .inquiry {
+                width: 25%;
+                padding: 30px 80px;
+                color: #fff;
+                display: inline-block;
+                border: 1px solid #fff;
+                margin: 10px 0;
+                position: relative;
+                transition: 0.3s all;
+            }
+
+            & .inquiry::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: -50px;
+                width: 130px;
+                height: 1px;
+                background-color: #fff;
+                transition: 0.3s all;
+            }
+
+            & .inquiry::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: -50px;
+                width: 20px;
+                height: 1px;
+                background-color: #fff;
+                transform: rotate(20deg);
+                transform-origin: right;
+                transition: 0.3s all;
+            }
+
+            & .inquiry:hover {
+                opacity: 0.7;
+            }
+
+            & .inquiry:hover::before {
+                position: absolute;
+                right: -80px;
+            }
+
+            & .inquiry:hover::after {
+                transform: translateX(30px);
+            }
+        }
+    }
+}
+
+.end-container {
+    color: #fff;
+    margin-top: 200px;
+    padding: 70px 0;
+    border-top: 1px solid #fff;
+    
+    & .end-box {
+        margin: 0 auto;
+        width: 95%;
+        font-size: 10px;
+
+        & .address-menu {
+            margin: 30px 0;
+
+            & p {
+                margin: 0;
+            }
+        }
+
+        & .wide {
+            display: flex;
+            justify-content: space-between;
+
+            & .sns-menu {
+                display: flex;
+
+                & a {
+                    display: inline-block;
+                    margin-right: 10px;
+                }
+            }
+
+            & .end-logo {
+                display: flex;
+
+                a {
+                    margin-right: 20px;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
